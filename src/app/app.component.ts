@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Hike } from './shared/hike';
 
 @Component({
   selector: 'app-root',
