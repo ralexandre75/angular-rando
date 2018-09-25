@@ -15,8 +15,8 @@ import { HikeDetailsComponent } from './hike/hike-details.component';
 
 const APP_ROUTE: Route[] = [
   { path: 'home', component: HomeComponent },
-  { path: 'hikes/:id', component: HikeDetailsComponent },
   { path: 'hikes', component: HikeListComponent },
+  { path: 'hikes/:id', component: HikeDetailsComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];

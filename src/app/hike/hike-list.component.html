@@ -1,5 +1,5 @@
 <h2>Liste de randonnée</h2>
 
 <div *ngFor="let hike of hikes">
-    <a [routerLink] = "['/hikes', 'hikes.id']" >  {{hike.name}} </a> - {{hike.description}}
+    <a [routerLink] = "['/hikes', hike.id]" >  {{hike.name}} </a> - {{hike.description}}
 </div>
