@@ -7,7 +7,10 @@ import { HikeService } from './hike.service';
     selector: 'app-hike-list',
     templateUrl: 'hike-list.component.html'
 })
-export class HikeListComponent implements OnInit {hikes: Hike[];
+export class HikeListComponent implements OnInit {
+
+    hikes: Hike[];
+    searchTerm: string;
 
     constructor(private _hikeService: HikeService) {
     }

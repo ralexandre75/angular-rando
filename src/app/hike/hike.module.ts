@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { HikeListComponent } from './hike-list.component';
 import { HikeService } from './hike.service';
 import { HikeDetailsComponent } from './hike-details.component';
+import { HikeFilterPipe } from './hike-filter.pipe';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { HikeDetailsComponent } from './hike-details.component';
     ],
     declarations: [
         HikeListComponent,
-        HikeDetailsComponent
+        HikeDetailsComponent,
+        HikeFilterPipe
     ],
     exports: [HikeListComponent],
     providers: [HikeService]
