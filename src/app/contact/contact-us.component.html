@@ -1,9 +1,10 @@
 <h2>Contactez-nous</h2>
 
-<form #form="ngForm">
+<form #form="ngForm" novalidate>
     <div class="form-group">
         <label for="subject">Sujet</label>
         <input  type="text"
+                #msgSubject="ngModel"
                 name="subject" 
                 ngModel
                 class="form-control" 
@@ -38,3 +39,4 @@
 </form>
 
 Form : {{ form.value | json }}
+Sujet : {{msgSubject.valid}}
