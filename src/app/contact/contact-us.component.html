@@ -1,6 +1,6 @@
 <h2>Contactez-nous</h2>
 
-<form #form="ngForm" novalidate>
+<form #form="ngForm" (submit)="sendMessage(form)" novalidate>
     <div class="form-group"
         [class.has-error]="msgSubject.invalid && msgSubject.touched">
         <label for="subject" class="control-label">Sujet</label>
