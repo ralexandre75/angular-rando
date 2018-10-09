@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
+import { ContactService } from "./contact.service";
 
 import { ContactUsComponent } from "./contact-us.component";
 
@@ -13,7 +14,9 @@ import { ContactUsComponent } from "./contact-us.component";
         ContactUsComponent
     ],
     exports: [],
-    providers: []
+    providers: [
+        ContactService
+    ]
 })
 
 export class ContactModule {}
