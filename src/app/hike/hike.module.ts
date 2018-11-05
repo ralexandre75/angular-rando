@@ -4,8 +4,10 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 import { HikeListComponent } from './hike-list.component';
-import { HikeService } from './hike.service';
 import { HikeDetailsComponent } from './hike-details.component';
+import { HikeSummaryComponent } from './hike-summary.component';
+
+import { HikeService } from './hike.service';
 import { HikeFilterPipe } from './hike-filter.pipe';
 
 
@@ -18,7 +20,8 @@ import { HikeFilterPipe } from './hike-filter.pipe';
     declarations: [
         HikeListComponent,
         HikeDetailsComponent,
-        HikeFilterPipe
+        HikeFilterPipe,
+        HikeSummaryComponent
     ],
     exports: [HikeListComponent],
     providers: [HikeService]

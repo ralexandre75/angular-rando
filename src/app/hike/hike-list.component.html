@@ -6,5 +6,6 @@
 
 <div *ngFor="let hike of hikes | hikeFilter:searchTerm">
     <a [routerLink] = "['/hikes', hike.id]" >  {{ hike.name | uppercase }} </a> - {{ hike.description }}
+    <app-hike-summary></app-hike-summary>
 </div>
 
