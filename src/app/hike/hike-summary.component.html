@@ -1,4 +1,6 @@
-<div>
-    <div class="card-title">Panel title</div>
-    <div class="card-body">Panel Content</div>
+<div class="card" style="width: 18rem;">
+    <div class="card-header"><a [routerLink] = "['/hikes', hike.id]" >  {{ hike.name | uppercase }} </a></div>
+    <div class="card-body">{{hike.description}}</div>
 </div>
+
+ 
