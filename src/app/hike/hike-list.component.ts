@@ -22,4 +22,8 @@ export class HikeListComponent implements OnInit {
       );
       console.log(this.hikes);
     }
+
+    addToMyTodoHike(hikeToAdd: Hike) {
+        console.log(`rando ${hikeToAdd.name} ajoutée`);
+    }
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, Output, EventEmitter } from "@angular/core";
 import { Hike } from "./hike"
 
 @Component({
@@ -8,4 +8,14 @@ import { Hike } from "./hike"
 
 export class HikeSummaryComponent {
     @Input() hike: Hike;
+    @Output() addhikeasfavorite = new EventEmitter();
+
+    toggleAsTodoHike(isAdded:any) {
+        console.log(isAdded);
+        if(isAdded) {
+            this.addhikeasfavorite.emit(this.hike);
+        }
+    }
+
+
 }
