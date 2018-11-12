@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { Route, RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -38,6 +39,7 @@ const APP_ROUTE: Route[] = [
     HttpModule,
     HomeModule,
     ContactModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(APP_ROUTE)
   ],
   providers: [],

@@ -1,8 +1,30 @@
 import { Component } from '@angular/core';
+import { trigger, state, animate, style, transition, keyframes } from '@angular/animations'
 
 
 @Component({
     selector: 'app-home',
-    templateUrl: 'home.component.html'
+    templateUrl: 'home.component.html',
+    animations: [
+        trigger('toggleElement', [
+            state('open', style({height: '*'})),
+            state('closed', style({ 'height': '0px', 'font-size' : '0px' })),
+            transition('closed <=> open', [
+                animate(1000)
+            ])
+        ])
+    ],
 })
-export class HomeComponent {}
+export class HomeComponent {
+    open: boolean = false;
+    toggleElement: string = "closed";
+
+    toggle() {
+        this.open = !this.open;
+        if(this.open) {
+            this.toggleElement = 'open';
+        } else {
+            this.toggleElement = 'closed';
+        }
+    }
+}
