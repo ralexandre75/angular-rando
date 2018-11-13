@@ -10,7 +10,7 @@ import { trigger, state, animate, style, transition, keyframes } from '@angular/
             state('open', style({height: '*'})),
             state('closed', style({ 'height': '0px', 'font-size' : '0px' })),
             transition('closed <=> open', [
-                animate("1000ms 2000ms")
+                animate("3000ms cubic-bezier(1, 0, 0, 1)")
             ])
         ])
     ],
