@@ -14,3 +14,21 @@
 
 <hr>
 
+
+    <h3>Citation</h3>
+<div class="row">
+    <div class="frame col-md-6">
+        <div class="citation" [@animateCitation]="animateCitation">
+            {{quote.text}}
+            <br>
+            {{quote.author}}
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <a class="btn btn-primary" (click)="getPreviousQuote()">Précédente</a>
+        <a class="btn btn-primary" (click)="getNextQuote()">Suivante</a>
+    </div>
+</div>
