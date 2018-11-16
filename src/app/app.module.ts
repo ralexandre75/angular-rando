@@ -6,13 +6,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
+
 import { HikeModule } from './hike/hike.module';
 import { HomeModule } from './home/home.module';
 import { ContactModule } from './contact/contact.module';
+import { MapModule } from './map/map.module';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HikeListComponent } from './hike/hike-list.component';
+import { MapComponent } from './map/map.component';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { HikeDetailsComponent } from './hike/hike-details.component';
 import { ContactUsComponent } from './contact/contact-us.component';
@@ -23,6 +26,7 @@ const APP_ROUTE: Route[] = [
   { path: 'home', component: HomeComponent },
   { path: 'hikes', component: HikeListComponent },
   { path: 'hikes/:id', component: HikeDetailsComponent },
+  { path: 'map', component: MapComponent },
   { path: 'contact', component: ContactUsComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
@@ -40,6 +44,7 @@ const APP_ROUTE: Route[] = [
     HomeModule,
     ContactModule,
     BrowserAnimationsModule,
+    MapModule,
     RouterModule.forRoot(APP_ROUTE)
   ],
   providers: [],
