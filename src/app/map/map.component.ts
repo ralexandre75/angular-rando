@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MapService } from './map.service';
 
 @Component ({
     selector: 'app-map',
@@ -15,7 +16,13 @@ export class MapComponent {
     droppedLat: number;
     droppedLng: number;
 
-    markerWasDropped : boolean;
+    markerWasDropped: boolean;
+
+    startingPoint: string = "La ville Ollivier, 35140 Mézières-sur-Couesnon, France";
+
+    constructor(private _mapService: MapService) {
+
+    }
 
     onCoordMarkerDropped(event: any) {
         console.log(event);
@@ -23,6 +30,16 @@ export class MapComponent {
         this.markerWasDropped = true;
         this.droppedLat = event.coords.lat.toFixed(5);
         this.droppedLng = event.coords.lng.toFixed(5);
+    }
+
+    geocode() {
+        this._mapService
+            .getLatLng(this.startingPoint)
+            .subscribe(
+                (data: any) => console.log(data),
+                (err: any) => console.error(err)
+            );
+
     }
 
     

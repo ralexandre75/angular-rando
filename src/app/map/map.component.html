@@ -1,6 +1,10 @@
 <div>
     <h2>Carte de notre prochaine randonnée</h2>
 
+    <div>
+        <button (click)="geocode()">localiser</button>
+    </div>
+
     <agm-map [latitude]="lat" [longitude]="lng">
         <agm-marker 
             [latitude]="lat" 
@@ -16,5 +20,5 @@
 </div>
 
 <div *ngIf="!markerWasDropped">
-    Veuillez déplcer le marqueur pour obtenir des coordonnées GPS
+    Veuillez déplacer le marqueur pour obtenir des coordonnées GPS
 </div>
