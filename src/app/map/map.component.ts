@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ApplicationRef } from '@angular/core';
 import { MapService } from './map.service';
 
 @Component ({
@@ -22,7 +22,7 @@ export class MapComponent {
 
     markers: marker[] = [];
 
-    constructor(private _mapService: MapService) {
+    constructor(private _mapService: MapService, private _applicationRef: ApplicationRef) {
 
     }
 
@@ -53,6 +53,8 @@ export class MapComponent {
         }
 
         this.markers.push(marker);
+        console.log(this.markers);
+        this._applicationRef.tick();
     }   
 }
 
