@@ -2,7 +2,18 @@
     <h2>Carte de notre prochaine randonnée</h2>
 
     <div>
-        <button (click)="geocode()">localiser</button>
+        <input 
+            type="text" 
+            value=""
+            class="start"
+            placeholder="votre point de départ" 
+            [(ngModel)]="startingPoint"
+        />
+        <button 
+            class="btn btn-primary" 
+            (click)="geocode()">
+                localiser
+        </button>
     </div>
 
     <agm-map [latitude]="lat" [longitude]="lng">
