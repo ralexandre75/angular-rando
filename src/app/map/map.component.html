@@ -13,6 +13,13 @@
             (dragEnd)="onCoordMarkerDropped($event)"
             >
         </agm-marker>
+
+        <agm-marker *ngFor="let m of markers"
+            [latitude]="m.lat" 
+            [longitude]="m.lng"
+            [markerDraggable]="m.draggable"
+            >
+        </agm-marker>
     </agm-map>
 </div>
 <div *ngIf="markerWasDropped">
