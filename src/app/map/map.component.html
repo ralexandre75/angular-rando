@@ -16,6 +16,23 @@
         </button>
     </div>
 
+    <br>
+
+  <div>
+        <form (submit)="addMarkerByCoords(form.value)" #form="ngForm">
+            <label for="markerByCoordsLat">Latitude</label>
+            <input type="text" name="markerByCoordsLat" ngModel id="markerByCoordsLat">
+
+            <label for="markerByCoordsLng">Latitude</label>
+            <input type="text" name="markerByCoordsLng" ngModel id="markerByCoordsLng">
+
+            <button type="submit">Ajouter</button>
+        </form>
+    </div>
+
+    {{ form.value | json }}
+
+
     <agm-map [latitude]="lat" [longitude]="lng">
         <agm-marker 
             [latitude]="lat" 
@@ -31,8 +48,17 @@
             [markerDraggable]="m.draggable"
             >
         </agm-marker>
+
+       <agm-marker *ngFor="let m of markersFromCoords"
+            [latitude]="m.lat" 
+            [longitude]="m.lng"
+            [markerDraggable]="m.draggable"
+            [iconUrl]= "m.icon">
+        </agm-marker>
     </agm-map>
 </div>
+
+
 <div *ngIf="markerWasDropped">
     latitude : {{droppedLat}} - longitude : {{droppedLng }}
 </div>

@@ -1,6 +1,7 @@
 import { Component, ApplicationRef } from '@angular/core';
 import { MapService } from './map.service';
 
+
 @Component ({
     selector: 'app-map',
     templateUrl: 'map.component.html',
@@ -21,6 +22,11 @@ export class MapComponent {
     startingPoint: string = "La ville Ollivier, 35140 Mézières-sur-Couesnon, France";
 
     markers: marker[] = [];
+    markersFromCoords: marker[] = [];
+
+    
+
+
 
     constructor(private _mapService: MapService, private _applicationRef: ApplicationRef) {
 
@@ -56,6 +62,22 @@ export class MapComponent {
         console.log(this.markers);
         this._applicationRef.tick();
     }   
+
+    
+ //   ngOnInit() {
+ //       this.myForm = new FormGroup({
+ //           markerByCoordsLat: new FormControl(''),
+ //           markerByCoordsLng: new FormControl('')
+ //       })
+ //   }
+
+    addMarkerByCoords(formValue: any) {
+        let marker = { lat: 0, lng: 0, draggable: false, icon: "", title: ""};
+        marker.lat = parseFloat(formValue.markerByCoordsLat);
+        marker.lng = parseFloat(formValue.markerByCoordsLng);
+        marker.icon = "https://www.iconsdb.com/icons/preview/orange/map-marker-2-xxl.png";
+        this.markersFromCoords.push(marker);
+    }
 }
 
 interface marker {
@@ -64,4 +86,5 @@ interface marker {
     title?: string;
     icon?: string;
     draggable: boolean;
+
 }
