@@ -23,6 +23,7 @@ export class MapComponent {
 
     markers: marker[] = [];
     markersFromCoords: marker[] = [];
+    pointsForPolyline: coord[] = [];
 
     
 
@@ -50,12 +51,22 @@ export class MapComponent {
 
     }
 
+    updatePolyline(event: any) {
+        let droppedLatForPolyline = parseFloat(event.coords.lat);
+        let droppedLngForPolyline = parseFloat(event.coords.lng);
+        this.pointsForPolyline.push({lat: droppedLatForPolyline, lng: droppedLngForPolyline});
+    }
+
     placeMarkerOnGeocodedPlace(location: any) {
         let marker = {
             lat: location.geometry.location.lat(),
             lng: location.geometry.location.lng(),
             title: "",
             draggable: true
+        }
+
+        if(this.pointsForPolyline.length === 0){
+            this.pointsForPolyline.push({lat: marker.lat, lng: marker.lng});
         }
 
         this.markers.push(marker);
@@ -87,4 +98,9 @@ interface marker {
     icon?: string;
     draggable: boolean;
 
+}
+
+interface coord {
+    lat: number;
+    lng:number;
 }

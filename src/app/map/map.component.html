@@ -42,6 +42,14 @@
             >
         </agm-marker>
 
+        <agm-marker 
+        [latitude]="lat" 
+        [longitude]="lng"
+        [markerDraggable]="true"
+        (dragEnd)="updatePolyline($event)"
+        >
+        </agm-marker>
+
         <agm-marker *ngFor="let m of markers"
             [latitude]="m.lat" 
             [longitude]="m.lng"
@@ -55,6 +63,16 @@
             [markerDraggable]="m.draggable"
             [iconUrl]= "m.icon">
         </agm-marker>
+
+
+
+        <agm-polyline>
+            <agm-polyline-point *ngFor="let point of pointsForPolyline"
+            [latitude]="point.lat"
+            [longitude]="point.lng"
+            >
+            </agm-polyline-point>
+        </agm-polyline>
     </agm-map>
 </div>
 
